@@ -1,0 +1,75 @@
+{# /templates/RecipeBookTemplates/form.html.twig #}
+
+{% extends 'base.html.twig' %}
+{% block title %}Add recipe{% endblock %}
+{% block body %}
+    <p>Current date is: {{ current_date }}</p>
+    <form action="{{ path('rbAdd') }}" method="post">
+        <table id="table">
+            <tr>
+                <td>Name:</td>
+                <td><input type="text" name="recipe_name"/></td>
+            </tr>
+            <tr>
+                <td>
+                    <button id="btn" type="button" onclick="add_new_ingredient_input()">Add Ingredient</button>
+                </td>
+            </tr>
+            <tr>
+                <td valign="top">How to do:</td>
+                <td><textarea name="description"></textarea></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="right"><input type="submit"  value="send"/></td>
+            </tr>
+        </table>
+        <input type="hidden" id="hidden_input" name="number_of_ingredients" value="1">
+    </form>
+    {{ dump(ingredient_names) }}
+{% endblock %}
+{% block javascripts %}
+    <script>
+    let counter = 0;
+
+    $(function() {
+        add_new_ingredient_input();
+    });
+
+    function add_new_ingredient_input() {
+        const ingredient_input_field = getIngredientInputField(counter++);
+        $(ingredient_input_field).insertBefore($("#table tr:nth-last-child(3)"));
+    }
+
+    function getIngredientInputField(id) {
+        const ingredient_selector = $('<select>');
+        ingredient_selector.prop('name', `ingredient_name_${id}`);
+        ingredient_selector.append(
+            '{% for ingredient in ingredient_names %}' +
+                '<option>{{ ingredient }}</option>' +
+            '{% endfor %}');
+
+        const ingredient_quantity_input = $('<input>');
+        ingredient_quantity_input.prop('type', 'text');
+        ingredient_quantity_input.prop('name', `ingredient_quantity_${id}`);
+
+        const tr_ingredient_input_field = $('<tr>');
+        const td_ingredient_name = $('<td>').text('Ingredient: ');
+        const td_ingredient_quantity = $('<td>').text('Quantity: ');
+        const td_ingredient_name_input = $('<td>');
+        const td_ingredient_quantity_input = $('<td>');
+
+        td_ingredient_name_input.append(ingredient_selector);
+        td_ingredient_quantity_input.append(ingredient_quantity_input);
+
+        tr_ingredient_input_field
+            .append(td_ingredient_name)
+            .append(td_ingredient_name_input)
+            .append(td_ingredient_quantity)
+            .append(td_ingredient_quantity_input);
+
+        $("#hidden_input").val(id + 1);
+
+        return tr_ingredient_input_field;
+    }
+    </script>
+{% endblock %}

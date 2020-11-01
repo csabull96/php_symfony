@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Player Reviewer</title>
+    <link rel="stylesheet" href="../../public/css/main.css">
+</head>
+<body>
+    {{table_of_players}}
+
+    <label>Who is the oldest player?</label><br/>
+    <ul>{{oldest_player}}</ul>
+
+    <label>Who has a single digit jersey number?</label><br/>
+    <ul>{{players_single_digit_jersey_number}}</ul>
+
+    <label>Who plays for a team that's located in Los Angeles?</label><br/>
+    <ul>{{players_located_in_los_angeles}}</ul><br/>
+
+    <label>Who was born in the 90's?</label><br/>
+    <ul>{{players_born_90s}}</ul>
+
+    <label>Who is a professional basketball player?</label><br/>
+    <ul>{{nba_players}}</ul><br/>
+
+    {{table_of_generated_players}}
+
+    <label>How many players are there in each league?</label><br/>
+    <ul>{{number_of_players_per_league}}</ul>
+
+    <label>What is the most common first name among the players?</label><br/>
+    <ul>{{most_common_first_name}}</ul>
+
+    <label>What is the average age of the professional players?</label><br/>
+    <ul>{{average_age}}</ul><br/>
+</body>
+</html>

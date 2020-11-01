@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vote Results</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+    <h1>The actual results at: {{ Time }}</h1>
+    <div class="bordered">
+        <table>
+            <tr>
+                <th class="bordered">Song</th>
+                <th>Number of votes</th>
+            </tr>
+            {{ Songs }}
+        </table>
+    </div>
+    <a href="/songs/form">Submit another vote</a>
+</body>
+</html>

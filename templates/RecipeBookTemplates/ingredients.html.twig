@@ -1,0 +1,20 @@
+{# /templates/RecipeBookTemplates/ingredients.html.twig #}
+
+{% extends 'base.html.twig' %}
+{% block title %}Ingredients{% endblock %}
+{% block body %}
+    <a class="btn btn-secondary ml-4 mt-4" href="{{ path('rbList') }}">Back to the Recipes</a>
+    <div class="m-4">
+        <form action="{{ path('rbAddIngredient') }}" method="post">
+            <label>Add a new ingredient here </label>
+            <input name="ingredient" type="text" /></br>
+            <input class="btn btn-success" type="submit" value="Add">
+        </form>
+    </div>
+
+    <ul>
+        {% for ing in ingredients %}
+            <li>{{ ing }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

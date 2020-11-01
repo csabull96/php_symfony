@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Song Voter</title>
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+</head>
+<body>
+    <h2 style="color: #C82829">Song Voter 1.0</h2>
+    <form action="/songs/vote" method="post">
+        <table>
+            <tr>
+                <td><label>Name</label></td>
+                <td><input type="text" name="VoterName"/></td>
+            </tr>
+            <tr>
+                <td><label>E-mail</label></td>
+                <td><input type="text" name="VoterEmail"/></td>
+            </tr>
+            <tr>
+                <td><label>Favorite song</label></td>
+                <td>
+                    <select name="VoterFavoriteSong">{{ Songs }}</select>
+                </td>
+            </tr>
+        </table>
+        <br/>
+        <input type="submit" value="Vote"/>
+    </form>
+</body>
+</html>

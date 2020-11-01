@@ -1,0 +1,6 @@
+csabi recept|mayonnaise-123,water-234|tyuhu
+meatballs|black pepper-2,salt-1|mix with meat
+FIRST_RECIPE|water-200,salt-20,sugar-30|this is the how to do section
+SECOND_RECIPE|salt-25,egg-3,flour-200,milk-100|here you can let the users know how to recreate this dish
+THIRD_RECIPE|water-100,flour-125,milk-50,red pepper-5|you can explain all steps one by one
+FOURTH_RECIPE|black pepper-10,red pepper-20,butter-120-egg-4|or just leave it black
