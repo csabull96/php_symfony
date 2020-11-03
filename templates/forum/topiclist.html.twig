@@ -1,0 +1,20 @@
+{# templates/forum/topiclist.html.twig #}
+{# @var model \App\Model\TopicListModel #}
+
+{% extends "forum/forumbase.html.twig" %}
+
+{% block forumcontent %}
+    {% for topic in model.topicList %}
+        <p>
+            <a href="{{ path("forum_messagelist", { 'topic': topic.id }) }}">
+                Topic #{{ topic.id }}: {{ topic.name }}
+            </a>
+        </p>
+    {% endfor %}
+
+
+    {% form_theme model.topicForm "form_table_layout.html.twig" %}
+    {{ form_start(model.topicForm) }}
+    {{ form_widget(model.topicForm) }}
+    {{ form_end(model.topicForm) }}
+{% endblock %}

@@ -2,6 +2,7 @@
 
 {% set notices = app.session.flashbag.get('notice') %}
 
+<br/>
 {% for msg in notices %}
     <p style="color: red; font-weight: bold">{{ msg }}</p>
 {% endfor%}

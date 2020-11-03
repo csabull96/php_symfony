@@ -14,39 +14,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ef0b34f-c9e1-41c2-a258-13df14a40ff6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/css/main.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/FirstController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/MathController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/PlayerReviewerController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/RecipeBookController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/SongVoterController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/PlayerReviewerTemplates/CellTemplate.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/PlayerReviewerTemplates/HeaderTemplate.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/PlayerReviewerTemplates/LabelTemplate.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/PlayerReviewerTemplates/MainTemplate.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/PlayerReviewerTemplates/TableRowTemplate.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/PlayerReviewerTemplates/TableTemplate.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/PlayerReviewerTemplates/UnorderedListItemTemplate.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/PlayerReviewerTemplates/players.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/RecipeBookTemplates/form.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/RecipeBookTemplates/ingredients.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/RecipeBookTemplates/ingredients.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/RecipeBookTemplates/list.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/RecipeBookTemplates/recipes.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/SongVoterTemplates/Lottery.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/SongVoterTemplates/SelectOption.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/SongVoterTemplates/Song.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/SongVoterTemplates/SongVoterForm.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/SongVoterTemplates/VoteList.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/SongVoterTemplates/VoteSubmitted.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/SongVoterTemplates/songs.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/SongVoterTemplates/votes.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/flashbag.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/primes/cellnormal.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/primes/cellprime.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/primes/rowseparator.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/primes/table.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/EditorController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/ForumController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DTO/DtoBase.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DTO/ForumDto.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DTO/LoginDto.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DTO/TextDto.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/MessageListModel.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/MessageModel.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/TopicListModel.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/TopicModel.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/editor/data.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/editor/editor.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/editor/users.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/forum/forumbase.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/forum/messagelist.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/forum/messages_0.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/forum/messages_1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/forum/messages_2.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/forum/topiclist.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/forum/topics.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/flashbag.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/flashbag.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,9 +179,11 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.jetbrains.php.lang.actions.generation.PhpGenerateFieldAccessorHandlerBase$MyMemberChooser.fluent.setters.last.selected" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/primes" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
+    <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
+    <property name="settings.editor.selected.configurable" value="Symfony.ProfilerSettingsForm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -204,6 +195,16 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\Uni\php_symfony\Projects\first_symfony_project\templates\primes" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="EditorController.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/src/Controller/EditorController.php">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHP Script.EditorController.php" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -236,6 +237,8 @@
       <workItem from="1603565127496" duration="9000" />
       <workItem from="1604239321170" duration="6765000" />
       <workItem from="1604257106401" duration="6512000" />
+      <workItem from="1604343762354" duration="1160000" />
+      <workItem from="1604395273189" duration="19059000" />
     </task>
     <servers />
   </component>
@@ -258,29 +261,59 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="489" y="135" key="NewPhpClassDialog" timestamp="1603252215671">
+    <state x="447" y="70" width="1089" height="727" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604405092827">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="447" y="70" width="1089" height="727" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1604405092827" />
+    <state x="910" y="214" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1604437534981">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="910" y="214" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1604437534981" />
+    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser" timestamp="1604438485389">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824/0.-1080.1920.1040@0.0.1536.824" timestamp="1604438485389" />
+    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824/1920.0.1280.680@0.0.1536.824" timestamp="1604398774054" />
+    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1604436181679" />
+    <state x="883" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1604437570914">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="883" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1604437570914" />
+    <state x="489" y="135" key="NewPhpClassDialog" timestamp="1604438055569">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="489" y="135" key="NewPhpClassDialog/0.0.1536.824/0.-1080.1920.1040@0.0.1536.824" timestamp="1600596918375" />
-    <state x="489" y="135" key="NewPhpClassDialog/0.0.1536.824@0.0.1536.824" timestamp="1603252215671" />
+    <state x="489" y="135" key="NewPhpClassDialog/0.0.1536.824/1920.0.1280.680@0.0.1536.824" timestamp="1604398618205" />
+    <state x="489" y="135" key="NewPhpClassDialog/0.0.1536.824@0.0.1536.824" timestamp="1604438055569" />
     <state x="604" y="336" key="NewPhpFileDialog" timestamp="1600596851824">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="604" y="336" key="NewPhpFileDialog/0.0.1536.824/0.-1080.1920.1040@0.0.1536.824" timestamp="1600596851824" />
     <state x="604" y="336" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1600096677788" />
-    <state x="352" y="112" key="SettingsEditor" timestamp="1603278612839">
+    <state x="481" y="76" key="SettingsEditor" timestamp="1604344600238">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="57" key="SettingsEditor/0.0.1536.824/0.-1080.1920.1040@0.0.1536.824" timestamp="1600601340016" />
-    <state x="352" y="112" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1603278612839" />
-    <state x="425" y="187" key="run.anything.popup" timestamp="1603255885869">
+    <state x="481" y="76" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1604344600238" />
+    <state x="425" y="186" key="run.anything.popup" timestamp="1604402931666">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1603255885869" />
+    <state x="425" y="186" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1604402931666" />
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1603284074782">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824/0.-1080.1920.1040@0.0.1536.824" timestamp="1600601323430" />
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1603284074782" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/src/DTO/DtoBase.php</url>
+          <line>10</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
