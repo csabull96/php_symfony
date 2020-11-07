@@ -5,11 +5,13 @@
 {% block title %}Register{% endblock %}
 
 {% block body %}
-    <p>akarmi</p>
-    {% if form is not null and form is not empty %}
-        {% form_theme form 'form_table_layout.html.twig' %}
-        {{ form_start(form) }}
-        {{ form_widget(form) }}
-        {{ form_end(form) }}
+    <div class="ml-4">
+        <a class="btn btn-warning mb-4" href="{{ path('editor') }}">Go Back To The Home Page</a>
+        {% if form is not null and form is not empty %}
+            {% form_theme form 'form_table_layout.html.twig' %}
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            {{ form_end(form) }}
     {% endif %}
+    </div>
 {% endblock %}

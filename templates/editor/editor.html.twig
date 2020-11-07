@@ -9,23 +9,21 @@
 {% block title %}My Editor{% endblock %}
 
 {% block body %}
-    {% if app.session.get('userName') is not empty %}
-        {% set userName = app.session.get('userName') %}
-        <p style="color:green; font-weight: bold">Logged in as {{ userName }}</p>
-        <a class="btn btn-danger" href="{{ path('changePassword') }}">Change Password</a>
-        <a class="btn btn-danger" href="{{ path('editorLogout') }}">Log Out</a>
-        <a class="btn btn-success" href="{{ path('forum_topiclist') }}">Forum</a>
-    {% else %}
-        <a class="btn btn-primary" href="{{ path('registerAction') }}">Register</a>
-    {% endif %}
     {% if form is not null and form is not empty %}
         {% form_theme form 'form_table_layout.html.twig' %}
         {{ form_start(form) }}
         {{ form_widget(form) }}
         {{ form_end(form) }}
     {% endif %}
+    {% if app.session.get('userName') is not empty %}
+        <a class="btn btn-success ml-2 mt-2" href="{{ path('forum_topiclist') }}">Go To Forum</a><br/>
+        <a class="btn btn-warning ml-2 mt-2" href="{{ path('changePassword') }}">Change Password</a><br/>
+        <a class="btn btn-danger ml-2 mt-2" href="{{ path('editorLogout') }}">Log Out</a>
+    {% else %}
+        <a href="{{ path('registerAction') }}">Register</a>
+    {% endif %}
     <hr/>FILE CONTENTS:<br/>
-    <p>{{ filetext|nl2br }}</p>
+    <p class="ml-4">{{ filetext|nl2br }}</p>
     <hr/>SESSION CONTENTS:<br/>
-    <p>{{ sessiontext|nl2br }}</p>
+    <p class="ml-4">{{ sessiontext|nl2br }}</p>
 {% endblock %}

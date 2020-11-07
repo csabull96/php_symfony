@@ -72,7 +72,8 @@ class ForumController extends AbstractController
             foreach ($lines as $key => $line)
             {
                 $topic = new TopicModel();
-                $topic->setId($key)->setName($line);
+                $topic->setId($key)
+                    ->setName($line);
 
                 array_unshift($topiclist, $topic);
             }

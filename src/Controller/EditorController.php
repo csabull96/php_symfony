@@ -64,7 +64,6 @@ class EditorController extends AbstractController
      */
     public function editorAction(Request $request) : Response {
         $twigParams = ["form" => null, "filetext" => "", "sessiontext" => ""];
-        //return $this->render("editor/editor.html.twig", $twigParams);
 
         $twigParams["sessiontext"] = $this->get("session")->get("sessiontext");
         if (file_exists($this->dataFile))
@@ -97,11 +96,11 @@ class EditorController extends AbstractController
         $text = $dto->getTextContent();
         if ($form->get("saveToSession")->isClicked()) {
             $this->get("session")->set("sessiontext", $text);
-            $this->addFlash("notice", "Saved to file");
+            $this->addFlash("notice", "Saved to session");
         }
         else {
+            $this->addFlash("notice", "Saved to file");
             file_put_contents($this->dataFile, $text);
-            $this->addFlash("notice", "Saved to session");
         }
     }
 

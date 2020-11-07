@@ -48,8 +48,8 @@ class ForumDto extends DtoBase
         $builder = $this->formFactory->createBuilder(FormType::class, $this);
         $builder
             ->add("textContent", TextType::class,
-                ["required" => true, "label" => "Add {$this->category}"])
-            ->add("save", SubmitType::class);
+                ["required" => true, "label" => false])
+            ->add("save", SubmitType::class, ['label' => "Add {$this->category}"]);
         return $builder->getForm();
     }
 }
