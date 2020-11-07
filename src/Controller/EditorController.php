@@ -3,8 +3,10 @@
 
 namespace App\Controller;
 
+use App\DTO\ChangePasswordDto;
 use App\DTO\DtoBase;
 use App\DTO\LoginDto;
+use App\DTO\RegisterDto;
 use App\DTO\TextDto;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\FormFactoryInterface;
@@ -74,13 +76,6 @@ class EditorController extends AbstractController
         else
             $dto = new LoginDto($this->get("form.factory"), $request);
 
-        // q1: different scenarios
-        //      1) rendering view depending whether user is logged in or not
-        //      2) form is submitted (how does the form know which action to execute?) then logs in
-        //      then redirected to editor again
-        //      3) render with text input this time
-        // q2: motivation behind the form builders
-
         /** @var DtoBase $dto */
         $form = $dto->getForm();
         $form->handleRequest($request);
@@ -125,5 +120,115 @@ class EditorController extends AbstractController
             }
         }
         $this->addFlash("notice", "Login failed");
+    }
+
+    /**
+     * @param Request $request
+     * @return Response
+     * @Route(name="registerAction", path="editor/register")
+     */
+    public function registerAction(Request $request) : Response {
+
+        $dto = new RegisterDto($this->formFactory, $request);
+
+        $form = $dto->getForm();
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $successful_registration = $this->processRegisterInput($dto);
+            if ($successful_registration) {
+                $this->addFlash('notice', "Successful registration as {$dto->getUsername()}");
+            }
+            else {
+                $this->addFlash('notice', "Registration failed");
+            }
+            return $this->redirectToRoute('editor');
+        }
+
+        return $this->render("editor/register.html.twig", ["form" => $form->createView()]);
+    }
+
+    /**
+     * @param RegisterDto $dto
+     * @return bool
+     */
+    private function processRegisterInput(RegisterDto $dto) : bool {
+        $username = $dto->getUsername();
+        $password = $dto->getPassword();
+
+        $users = file($this->usersFile, FILE_IGNORE_NEW_LINES);
+        foreach ($users as $user) {
+            $user_data = explode("\t", $user);
+            if ($username == $user_data[0])
+                return false;
+        }
+
+        // if we made it here it means that the required username is not used yet
+        $user_to_register = "{$username}\t".password_hash($password, PASSWORD_DEFAULT)."\n";
+        file_put_contents($this->usersFile, $user_to_register, FILE_APPEND);
+
+        $this->get('session')->set("userName", $username);
+        return true;
+    }
+
+    /**
+     * @param Request $request
+     * @return Response
+     * @Route(name="changePassword", path="editor/changepassword")
+     */
+    public function changePasswordAction(Request $request) : Response {
+        $dto = new ChangePasswordDto($this->formFactory, $request);
+        $form = $dto->getForm();
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $username = $this->get('session')->get('userName');
+            $password_successfully_changed = $this->processChangePassword(
+                $username,
+                $dto->getOldPassword(),
+                $dto->getNewPassword());
+            if ($password_successfully_changed) {
+                return $this->redirectToRoute('editor');
+            }
+            else {
+                return $this->redirectToRoute('changePassword');
+            }
+        }
+
+
+        return $this->render('editor/changepassword.html.twig', ["form" => $form->createView()]);
+    }
+
+    private function processChangePassword(string $username, string $old_password, string $new_password) : bool {
+        $users = file($this->usersFile, FILE_IGNORE_NEW_LINES);
+
+        $logged_in_user = "";
+        $logged_in_user_data = array();
+
+        foreach ($users as $user) {
+            if (str_starts_with($user,$username)) {
+                $logged_in_user = $user;
+                break;
+            }
+        }
+        if ($logged_in_user) {
+            $logged_in_user_data = explode("\t", $logged_in_user);
+            if (password_verify($old_password, $logged_in_user_data[1])) {
+                $logged_in_user_data[1] = password_hash($new_password, PASSWORD_DEFAULT);
+                $this->addFlash('notice', "Password has successfully been changed.");
+                $users_as_string = file_get_contents($this->usersFile);
+                $updated_logged_in_user = $username."\t".$logged_in_user_data[1];
+                $updated_users_as_string = str_replace($logged_in_user,$updated_logged_in_user,$users_as_string);
+                file_put_contents($this->usersFile, $updated_users_as_string);
+                return true;
+            }
+            else {
+                $this->addFlash('notice', "The current password is not correct.");
+                return false;
+            }
+        }
+        else {
+            // logged in user not found
+
+        }
+        return false;
     }
 }

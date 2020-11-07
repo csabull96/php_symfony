@@ -12,8 +12,11 @@
     {% if app.session.get('userName') is not empty %}
         {% set userName = app.session.get('userName') %}
         <p style="color:green; font-weight: bold">Logged in as {{ userName }}</p>
+        <a class="btn btn-danger" href="{{ path('changePassword') }}">Change Password</a>
         <a class="btn btn-danger" href="{{ path('editorLogout') }}">Log Out</a>
         <a class="btn btn-success" href="{{ path('forum_topiclist') }}">Forum</a>
+    {% else %}
+        <a class="btn btn-primary" href="{{ path('registerAction') }}">Register</a>
     {% endif %}
     {% if form is not null and form is not empty %}
         {% form_theme form 'form_table_layout.html.twig' %}

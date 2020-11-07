@@ -1,0 +1,15 @@
+{# templates/editor/register.html.twig #}
+{# @var form \Symfony\Component\Form\FormView #}
+
+{% extends 'base.html.twig' %}
+{% block title %}Register{% endblock %}
+
+{% block body %}
+    <p>akarmi</p>
+    {% if form is not null and form is not empty %}
+        {% form_theme form 'form_table_layout.html.twig' %}
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        {{ form_end(form) }}
+    {% endif %}
+{% endblock %}
