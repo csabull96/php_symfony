@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Vote System{% endblock %}
+
+{% block body %}
+    <a href="{{ path('voteListQuestions') }}">BACK TO THE QUESTIONS</a>
+    {# @var \App\Entity\Choice[] choices #}
+    {% for choice in choices %}
+        <p>
+            {{ choice.choText }} [NUMBER OF VOTES: {{ choice.choNumvotes }}] |
+            <a href="{{ path('voteVote', { 'choice' : choice.choId }) }}">VOTE</a>
+        </p>
+    {% endfor %}
+{% endblock %}

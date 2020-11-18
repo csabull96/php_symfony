@@ -14,17 +14,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ef0b34f-c9e1-41c2-a258-13df14a40ff6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Controller/VotesController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Choice.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Question.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/votes/choices.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/votes/questions.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/first_symfony_project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/first_symfony_project.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/EditorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/EditorController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ForumController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ForumController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/editor/data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/templates/editor/data.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/editor/register.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/editor/register.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/editor/users.txt" beforeDir="false" afterPath="$PROJECT_DIR$/templates/editor/users.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/forum/messages_0.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/forum/messages_1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/forum/messages_2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/forum/messages_3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/forum/topics.txt" beforeDir="false" afterPath="$PROJECT_DIR$/templates/forum/topics.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,6 +156,8 @@
       <path value="$PROJECT_DIR$/vendor/psr/log" />
       <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
       <path value="$PROJECT_DIR$/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/data-fixtures" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-fixtures-bundle" />
     </include_path>
   </component>
   <component name="ProjectId" id="1hSyH3k5bcsu0PM7EYQEKD1hre6" />
@@ -230,6 +235,12 @@
       <workItem from="1604343762354" duration="1160000" />
       <workItem from="1604395273189" duration="19231000" />
       <workItem from="1604740397359" duration="16414000" />
+      <workItem from="1604861835796" duration="608000" />
+      <workItem from="1604935327122" duration="38000" />
+      <workItem from="1605116202493" duration="9000" />
+      <workItem from="1605204248207" duration="14000" />
+      <workItem from="1605345784177" duration="30000" />
+      <workItem from="1605691843097" duration="15177000" />
     </task>
     <servers />
   </component>
@@ -260,22 +271,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="910" y="214" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1604741462213" />
-    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser" timestamp="1604745636089">
+    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser" timestamp="1605721621661">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824/0.-1080.1920.1040@0.0.1536.824" timestamp="1604438485389" />
     <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824/1920.0.1280.680@0.0.1536.824" timestamp="1604398774054" />
-    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1604745636089" />
+    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1605721621661" />
     <state x="883" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1604742010293">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="883" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1604742010293" />
-    <state x="489" y="135" key="NewPhpClassDialog" timestamp="1604745564968">
+    <state x="489" y="135" key="NewPhpClassDialog" timestamp="1605726728821">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="489" y="135" key="NewPhpClassDialog/0.0.1536.824/0.-1080.1920.1040@0.0.1536.824" timestamp="1600596918375" />
     <state x="489" y="135" key="NewPhpClassDialog/0.0.1536.824/1920.0.1280.680@0.0.1536.824" timestamp="1604398618205" />
-    <state x="489" y="135" key="NewPhpClassDialog/0.0.1536.824@0.0.1536.824" timestamp="1604745564968" />
+    <state x="489" y="135" key="NewPhpClassDialog/0.0.1536.824@0.0.1536.824" timestamp="1605726728821" />
     <state x="604" y="336" key="NewPhpFileDialog" timestamp="1600596851824">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -294,11 +305,11 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="186" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1604402931666" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1604747550533">
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1605724297278">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824/0.-1080.1920.1040@0.0.1536.824" timestamp="1600601323430" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1604747550533" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1605724297278" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

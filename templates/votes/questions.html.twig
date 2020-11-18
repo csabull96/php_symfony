@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Vote System{% endblock %}
+
+{% block body %}
+    {# @var \App\Entity\Question[] questions #}
+    {% for question in questions %}
+        <p>
+            <a href="{{ path('voteListChoices', { 'question' : question.quId() }) }}">{{ question.quText }}</a>
+        </p>
+    {% endfor %}
+{% endblock %}
