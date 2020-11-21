@@ -3,12 +3,19 @@
 {% block title %}Vote System{% endblock %}
 
 {% block body %}
-    <a href="{{ path('voteListQuestions') }}">BACK TO THE QUESTIONS</a>
+    <a href="{{ path('listQuestionsAction') }}">BACK TO THE QUESTIONS</a>
+
+    {% form_theme form 'form_table_layout.html.twig' %}
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    {{ form_end(form) }}
+
     {# @var \App\Entity\Choice[] choices #}
     {% for choice in choices %}
         <p>
             {{ choice.choText }} [NUMBER OF VOTES: {{ choice.choNumvotes }}] |
-            <a href="{{ path('voteVote', { 'choice' : choice.choId }) }}">VOTE</a>
+            <a href="{{ path('voteAction', { 'id' : choice.choId }) }}">VOTE</a> |
+            <a href="{{ path('deleteChoiceAction', { 'id' : choice.choId }) }}">DELETE</a>
         </p>
     {% endfor %}
 {% endblock %}

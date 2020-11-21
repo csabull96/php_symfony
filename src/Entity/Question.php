@@ -34,8 +34,9 @@ class Question
      */
     private $qu_choices;
 
-    public function __construct()
+    public function __construct(string $text)
     {
+        $this->qu_text = $text;
         $this->qu_choices = new ArrayCollection();
     }
 

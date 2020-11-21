@@ -39,19 +39,19 @@ class Choice
      * @var bool|null
      * @ORM\Column(type="boolean", nullable=true)
      */
-    private $cho_visible;
+    private $cho_visible = true;
 
     /**
      * @var string|null
      * @ORM\Column(type="string", nullable=true, length=100)
      */
-    private $cho_text;
+    private $cho_text = "";
 
     /**
      * @var int/null
      * @ORM\Column(type="integer", nullable=true)
      */
-    private $cho_numvotes;
+    private $cho_numvotes = 0;
 
     /**
      * @var Question|null
