@@ -1,0 +1,8 @@
+{% extends 'base.html.twig' %}
+{% block title %}My Car Manager Page
+{% endblock %}
+{% block body %}
+    <p><a href="{{ path('listCars') }}">BACK TO THE CARS LIST</a></p>
+    {% block carBody %}
+    {% endblock %}
+{% endblock %}

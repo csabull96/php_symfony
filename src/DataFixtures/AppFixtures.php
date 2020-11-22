@@ -2,6 +2,8 @@
 
 namespace App\DataFixtures;
 
+use App\Entity\Brand;
+use App\Entity\Car;
 use App\Entity\Choice;
 use App\Entity\Question;
 use Doctrine\Bundle\FixturesBundle\Fixture;
@@ -116,6 +118,32 @@ class AppFixtures extends Fixture implements ContainerAwareInterface
         $this->em->flush();
         echo "DELETE OK. QUERIES: ".count($stackLogger->queries)."\n";
         echo "\n\n";
+
+        $bmw = new Brand();
+        $bmw->setBrandName("BMW");
+        $this->em->persist($bmw);
+
+        $audi = new Brand();
+        $audi->setBrandName("Audi");
+        $this->em->persist($audi);
+
+        $nissan = new Brand();
+        $nissan->setBrandName("Nissan");
+        $this->em->persist($nissan);
+
+        $this->em->flush();
+        echo "BRANDS OK. QUERIES: ".count($stackLogger->queries)."\n";
+
+        $gtr = new Car();
+        $gtr
+            ->setCarBrand($nissan)
+            ->setCarModel("GT-R")
+            ->setCarPrice(100000)
+            ->setCarVisible(true);
+
+        $this->em->persist($gtr);
+        $this->em->flush();
+        echo "CAR OK. QUERIES: ".count($stackLogger->queries)."\n";
     }
 }
 

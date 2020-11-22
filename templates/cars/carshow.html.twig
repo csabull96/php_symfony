@@ -1,0 +1,33 @@
+{% extends 'cars/cars.html.twig' %}
+
+{# @var car \App\Entity\Car #}
+
+{# intelligent search functionality
+    {{ someDataFromController.someProperty }}
+    someDataFromController["someProperty"]
+    someDataFromController->getSomeProperty()
+    someDataFromController->isSomeProperty()
+    someDataFromController->hasSomeProperty()
+    someDataFromController->$someProperty()
+#}
+
+{% block carBody %}
+    {% set brandName = car.carBrand is null ? "N/A" : car.carBrand.brandName %}
+    {% set brandId = car.carBrand is null ? "N/A" : car.carBrand.brandId %}
+
+    <table border="1">
+        <tr><td>ID:</td><td>{{ car.carId }}</td></tr>
+        <tr><td>MODIFIED:</td><td>{{ car.carModified|date("Y.m.d. H:i:s") }}</td></tr>
+        <tr><td>VISIBLE:</td><td>{{ car.carVisible ? "YES" : "NO" }}</td></tr>
+        <tr><td>MODEL:</td><td>{{ car.carModel }}</td></tr>
+        <tr><td>PRICE:</td><td></td>{{ car.carPrice }}</tr>
+        <tr><td>BRAND:</td>
+            <td>
+                {{ brandName }}
+                <a href="{{ path('listCars', { 'brandId': brandId }) }}">FILTER FOR BRAND</a>
+            </td>
+        </tr>
+        <tr><td></td><td></td></tr>
+
+    </table>
+{% endblock %}

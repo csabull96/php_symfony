@@ -55,7 +55,8 @@ class VotesController extends AbstractController
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid())
         {
-            $question = new Question($dto->getText());
+            $question = new Question();
+            $question->getQuText($dto->getText());
             $this->em->persist($question);
             $this->em->flush();
 

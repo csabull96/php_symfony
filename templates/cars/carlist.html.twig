@@ -1,0 +1,22 @@
+{%  extends 'cars/cars.html.twig' %}
+
+{#  @var cars \App\Entity\Car[] #}
+
+{% block carBody %}
+    <h2>LIST OF CARS</h2>
+    <p><a href="{{ path('carEdit') }}">ADD NEW CAR</a></p>
+    <table border="1">
+        <tr><th>Brand</th><th>Model</th><th>Datasheet</th><th>Edit</th><th>Remove</th></tr>
+
+        {% for car in cars %}
+            {% set brandName = car.carBrand is null ? "N/A" : car.carBrand.brandName %}
+            <tr>
+                <td>{{ brandName }}</td>
+                <td>{{ car.carModel }}</td>
+                <td><a href="{{ path('carShow', { 'carId': car.carId }) }}">SHOW</a></td>
+                <td><a href="{{ path('carEdit', { 'carId': car.carId }) }}">EDIT</a></td>
+                <td><a href="{{ path('carDelete', { 'carId': car.carId }) }}">DELETE</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
