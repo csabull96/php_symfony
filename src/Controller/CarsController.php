@@ -7,6 +7,7 @@ namespace App\Controller;
 use App\Entity\Car;
 use App\Services\ICarService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -115,5 +116,17 @@ class CarsController extends AbstractController
         return $this->render("cars/caredit.html.twig",
         ["form" => $form->createView()]);
 
+    }
+
+    /**
+     * @param Request $request
+     * @return Response
+     * @Route(name="api_cars", path="api/cars")
+     */
+    public function apiCarsAction(Request $request) : Response
+    {
+        // TODO: convert database entities to DTO objects
+        $cars = $this->carService->getAllCars();
+        return new JsonResponse($cars);
     }
 }

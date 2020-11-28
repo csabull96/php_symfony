@@ -1,0 +1,39 @@
+body {
+    margin: 5px;
+    font-family: "Calibri Light";
+}
+
+div {
+    padding: 10px;
+}
+
+a:hover {
+    color: red;
+    text-decoration: none;
+}
+
+.col {
+    display: table-cell;
+}
+
+#wrapper {
+    width: 100px;
+    padding: 0px;
+    display: table;
+}
+
+#header {
+    height: 100px;
+    width: 100%;
+    background-color: lightgreen;
+}
+
+#footer {
+    height: 100px;
+    width: 100%;
+    background-color: lightgreen;
+}
+
+#main {
+    width: 100%;
+}

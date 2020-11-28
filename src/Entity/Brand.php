@@ -12,7 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity
  * @ORM\Table(name="brands")
  */
-class Brand
+class Brand implements \JsonSerializable
 {
     /**
      * @var int
@@ -89,5 +89,18 @@ class Brand
     public function __toString()
     {
         return $this->brand_name;
+    }
+
+    public function jsonSerialize()
+    {
+        $array = get_object_vars($this);
+        foreach ($array as $key => $value)
+        {
+            if (str_starts_with($key, "__"))
+            {
+                unset($array[$key]);
+            }
+        }
+        return $array;
     }
 }

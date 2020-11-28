@@ -20,7 +20,7 @@
         <p><a href="{{ path('protected_content') }}">PROTECTED SECTION</a></p>
     {% else %}
         {% if form is not null and form is not empty %}
-            <div class="col-5">
+            <div style="width: 300px">
                 {% form_theme form 'bootstrap_4_layout.html.twig' %}
                 {{ form_start(form) }}
                 {{ form_widget(form) }}

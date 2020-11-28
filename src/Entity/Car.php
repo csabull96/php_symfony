@@ -13,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="cars")
  * @ORM\HasLifecycleCallbacks
  */
-class Car
+class Car implements \JsonSerializable
 {
     /**
      * @var int
@@ -193,5 +193,22 @@ class Car
     {
         $this->car_brand = $car_brand;
         return $this;
+    }
+
+    public function jsonSerialize()
+    {
+//         return [
+//           "car_modified" => $this->car_modified,
+//           "car_model" => $this->car_model
+//         ];
+        $array = get_object_vars($this);
+        foreach ($array as $key => $value)
+        {
+            if (str_starts_with($key, "__"))
+            {
+                unset($array[$key]);
+            }
+        }
+        return $array;
     }
 }
