@@ -52,7 +52,6 @@ class ForumController extends AbstractController
     public function topicListAction(Request $request) : Response
     {
         $this->checkLogin();
-
         $fname = "../templates/forum/topics.txt";
         $dto = new ForumDto($this->formFactory, $request, "topic");
         $form = $dto->getForm();
