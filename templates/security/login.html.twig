@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Log in{% endblock %}
+
+{% block body %}
+    {% if authError %}
+        <p style="color: red; font-weight: bold">LOGIN ERROR: {{ authError.message }}</p>
+    {% endif %}
+
+    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+        <p>LOGGED IN</p>
+        {% if is_granted("ROLE_ADMIN") %}
+            <p>YOU ARE A HIGH LEVEL ADMINISTRATOR...</p>
+        {% endif %}
+
+        <p>User entity in Twig: {{ app.user }}</p>
+        <p>User entity from the controller: {{ myUser.username }}</p>
+
+        <p><a href="{{ path('app_logout') }}">LOG OUT</a></p>
+        <p><a href="{{ path('protected_content') }}">PROTECTED SECTION</a></p>
+    {% else %}
+        {% if form is not null and form is not empty %}
+            <div class="col-5">
+                {% form_theme form 'bootstrap_4_layout.html.twig' %}
+                {{ form_start(form) }}
+                {{ form_widget(form) }}
+                {{ form_end(form) }}
+            </div>
+        {% endif %}
+    {% endif %}
+{% endblock %}
